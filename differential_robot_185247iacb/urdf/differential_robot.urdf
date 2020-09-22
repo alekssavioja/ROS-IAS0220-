@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<robot name="wroom_wroom">
+
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+
+  <material name="red">
+    <color rgba="0.8 0 0 1"/>
+  </material>
+
+  <material name="green">
+    <color rgba="0 0.8 0 1"/>
+  </material>
+
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.024" radius="0.0825"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+  </link>
+
+  <link name="right_wheel">
+    <visual>
+      <geometry>
+        <cylinder length="0.008" radius="0.035"/>
+      </geometry>
+      <origin rpy="1.57075 1.57075 0" xyz="0 -0.004 0"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_right_wheel" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0 -0.078 0"/>
+  </joint>
+
+  <link name="left_wheel">
+    <visual>
+      <geometry>
+        <cylinder length="0.008" radius="0.035"/>
+      </geometry>
+      <origin rpy="1.57075 1.57075 0" xyz="0 0.004 0"/>
+      <material name="black"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_left_wheel" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="0 0.078 0"/>
+  </joint>
+
+  <link name="head">
+    <visual>
+      <geometry>
+        <box size="0.03 0.03 0.03"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.015"/>
+      <material name="green"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_head" type="fixed">
+    <parent link="base_link"/>
+    <child link="head"/>
+    <origin xyz="0.0675 0 0.012"/>
+  </joint>
+
+  <link name="passive_wheel_holder">
+    <visual>
+      <geometry>
+        <cylinder length="0.0155" radius="0.0075"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.0115"/>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_wheel_holder" type="fixed">
+    <parent link="base_link"/>
+    <child link="passive_wheel_holder"/>
+    <origin xyz="0.075 0 -0.00775"/>
+  </joint>
+
+  <link name="passive_wheel">
+    <visual>
+      <geometry>
+        <sphere radius="0.0075"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="wheel_holder_to_wheel" type="fixed">
+    <parent link="passive_wheel_holder"/>
+    <child link="passive_wheel"/>
+    <origin xyz="0 0 -0.0195"/>
+  </joint>
+
+</robot>
