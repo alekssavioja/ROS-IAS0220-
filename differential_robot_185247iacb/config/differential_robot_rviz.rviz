@@ -62,6 +62,10 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         base_link:
           Alpha: 1
           Show Axes: false
@@ -103,11 +107,15 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        base_footprint:
+          Value: true
         base_link:
           Value: true
         head:
           Value: true
         left_wheel:
+          Value: true
+        map:
           Value: true
         passive_wheel:
           Value: true
@@ -121,23 +129,25 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        base_link:
-          head:
-            {}
-          left_wheel:
-            {}
-          passive_wheel_holder:
-            passive_wheel:
-              {}
-          right_wheel:
-            {}
+        map:
+          base_footprint:
+            base_link:
+              head:
+                {}
+              left_wheel:
+                {}
+              passive_wheel_holder:
+                passive_wheel:
+                  {}
+              right_wheel:
+                {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -158,7 +168,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.212902516
+      Distance: 1.04047859
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -173,10 +183,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: -0.0246020183
+      Pitch: 0.610397816
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.19857407
+      Yaw: 3.93357658
     Saved: ~
 Window Geometry:
   Displays:
