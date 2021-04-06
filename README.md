@@ -9,3 +9,7 @@ The course is diveded into multiple tasks:
 2) Understanding the connections between ROS nodes and topics. Using ROS topics command line arguments. Creating a new package soley for the purpose of node and topic communication. Makeing the nodes communicate with eachother.
 
 3) Making the robot move using package teleop_twist_keyboard node and the package Transform_frame move node.
+
+4) Adding attributes to the robots pieces for more accurate simulations
+
+5)...
